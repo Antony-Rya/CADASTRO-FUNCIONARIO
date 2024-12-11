@@ -113,9 +113,34 @@ public class Funcionario {
             System.out.println("01-Gerente.");
             System.out.println("02-Técnico");
             System.out.println("03-Assistente.");
+            System.out.println("04-Sair.");
             System.out.println("#########################");
             int opcao = sc.nextInt();
-            
+            System.out.println("Digite o nome do funcionário.");
+            String nome = sc.next();
+            System.out.println("Digite a idade do funcionário.");
+            int idade = sc.nextInt();
+            System.out.println("Digite o cargo do funcionário.");
+            String cargo = sc.next();
+            System.out.println("Digite o salário do funcionário.");
+            double salario = sc.nextDouble();
+            switch(opcao){
+                case 1:
+                    Gerente gerente = new Gerente(nome, idade, cargo, salario); 
+                    BancoDeDados.funcionarios.add(gerente);
+                    break;
+                case 2:
+                    Tecnico tecnico = new Tecnico(nome, idade, cargo, salario); 
+                    BancoDeDados.funcionarios.add(tecnico);
+                    break;
+                case 3:
+                    Assistente assistente = new Assistente(nome, idade, cargo, salario); 
+                    BancoDeDados.funcionarios.add(assistente);
+                    break;
+                case 4:
+                    break;
                     
+            }
+   
     }
 }

@@ -6,29 +6,29 @@ public class CADASTROFUNCIONARIOS {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        boolean menu = true;
+        while (menu){
+            System.out.println("#########################");
+            System.out.println("01-Cadastrar funcíonário.");
+            System.out.println("02-Listar funcíonários.");
+            System.out.println("03-Folha de pagamentos.");
+            System.out.println("04-Sair.");
+            System.out.println("#########################");
+            int opcao = sc.nextInt();
+            switch (opcao) {
+                case 1:
+                    Funcionario.cadastroFuncionario();
+                    break;
+                case 2:
+                    System.out.println(BancoDeDados.listarFuncionarios());
+                    break;
+                case 3:
+                    System.out.println(BancoDeDados.folhaPagamento());
+                    break;
+                }
+
+            }
         
-        System.out.println("#########################");
-        System.out.println("01-Cadastrar funcíonário.");
-        System.out.println("#########################");
-        int opcao = sc.nextInt();
-        
-        
-        
-        
-        
-        System.out.println("Digite o nome do funcionário.");
-        String nome = sc.next();
-        System.out.println("Digite a idade do funcionário.");
-        int idade = sc.nextInt();
-        System.out.println("Digite o cargo do funcionário.");
-        String cargo = sc.next();
-        System.out.println("Digite o salário do funcionário.");
-        double salario = sc.nextDouble();
-        
-        Gerente um = new Gerente(nome, idade, cargo, salario); 
-        System.out.println(um.toString());
-        
-        
+        }
         
     }
-}
