@@ -3,8 +3,8 @@ package com.mycompany.cadastro.funcionarios;
 
 public class Gerente extends Funcionario {
     
-    public Gerente(String nome, int idade, String cargo, double salario){
-        super(nome, idade, cargo, salario);
+    public Gerente(String nome, int idade, String cargo, double salario, String nivel){
+        super(nome, idade, cargo, salario, nivel);
         
     }
 

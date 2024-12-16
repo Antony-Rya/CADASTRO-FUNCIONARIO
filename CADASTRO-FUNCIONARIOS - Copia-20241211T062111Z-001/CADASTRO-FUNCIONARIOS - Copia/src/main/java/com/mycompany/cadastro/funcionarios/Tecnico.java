@@ -4,8 +4,8 @@ package com.mycompany.cadastro.funcionarios;
 public class Tecnico extends Funcionario {
     
     
-    public Tecnico(String nome, int idade,String cargo, double salario){
-        super(nome, idade, cargo, salario);
+    public Tecnico(String nome, int idade,String cargo, double salario, String nivel){
+        super(nome, idade, cargo, salario, nivel);
     }
     @Override
     public double calcularSalario(){

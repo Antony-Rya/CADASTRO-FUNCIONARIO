@@ -5,6 +5,18 @@ import java.util.Scanner;
 public class CADASTROFUNCIONARIOS {
 
     public static void main(String[] args) {
+        Gerente gerente = new Gerente("Antony", 23, "Dono", 1500, "Júnior");
+        gerente.promover();
+        gerente.promover();
+        gerente.promover();
+        System.out.println(gerente.toString());
+        gerente.getNivel();
+        System.out.println(gerente.toString());
+
+
+
+
+
         Scanner sc = new Scanner(System.in);
         boolean menu = true;
         while (menu){
@@ -31,4 +43,6 @@ public class CADASTROFUNCIONARIOS {
         
     }
         
+
+
 }

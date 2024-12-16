@@ -7,16 +7,16 @@ public class Funcionario {
     private String cargo;
     private double salario;
     private double bonus;
-    boolean promocao;
     private String nivel = "Júnior";
   
     
-    public Funcionario(String nome, int idade,String cargo, double salario){
+    public Funcionario(String nome, int idade,String cargo, double salario, String nivel){
         if (salario>=1500){
             this.salario = salario;
             this.nome = nome;
             this.idade = idade;
             this.cargo = cargo;
+            this.nivel = nivel;
        
         }else{
             System.out.println("Salário abaixo do mínimo.");
@@ -69,28 +69,24 @@ public class Funcionario {
         this.bonus = bonus;
     }
 
-    public boolean isPromocao() {
-        return promocao;
+    public String getNivel(){
+        return nivel;
     }
 
-    public void setPromocao(boolean promocao) {
-        this.promocao = promocao;
-    }
-    
-    public void promover(String cargo, double salario, double bonus){
-        if (this.isPromocao()){
-            this.cargo = cargo;
-            this.salario = salario;
-            this.bonus = bonus;
-            System.out.println("Funcionário promovido!");
+    public void setNivel(){
+        if (nivel == "Júnior"){
+            nivel = "Experiente";
+        }else if(nivel == "Experiente"){
+            nivel = "Senior";
         }else{
-            System.out.println("Funcionário não elegível para promoção.");
+            System.out.println("Funcionário não pode ser promovido.");
         }
     }
-    
-    public void mudarPromocao(){
-        setPromocao(!isPromocao());
+
+    public void promover(){
+        setNivel();
     }
+    
     
     @Override
     public String toString(){
@@ -98,7 +94,7 @@ public class Funcionario {
         dados += "Idade do funcionário: " + this.idade + "\n";
         dados += "Cargo do funcionário: " + this.cargo + "\n";
         dados += "Salário do funcionário: " + this.salario + "\n";
-        dados += "Elegivel a promoção?: " + this.promocao + "\n";
+        dados += "Nível: " + this.nivel + "\n";
         return dados;
     }
     
@@ -128,17 +124,18 @@ public class Funcionario {
             String cargo = sc.next();
             System.out.println("Digite o salário do funcionário.");
             double salario = sc.nextDouble();
+            String nivel = "Júnior";
             switch(opcao){
                 case 1:
-                    Gerente gerente = new Gerente(nome, idade, cargo, salario); 
+                    Gerente gerente = new Gerente(nome, idade, cargo, salario, nivel); 
                     BancoDeDados.funcionarios.add(gerente);
                     break;
                 case 2:
-                    Tecnico tecnico = new Tecnico(nome, idade, cargo, salario); 
+                    Tecnico tecnico = new Tecnico(nome, idade, cargo, salario, nivel); 
                     BancoDeDados.funcionarios.add(tecnico);
                     break;
                 case 3:
-                    Assistente assistente = new Assistente(nome, idade, cargo, salario); 
+                    Assistente assistente = new Assistente(nome, idade, cargo, salario, nivel); 
                     BancoDeDados.funcionarios.add(assistente);
                     break;
                 case 4:

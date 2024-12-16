@@ -2,8 +2,8 @@
 package com.mycompany.cadastro.funcionarios;
 
 public class Assistente extends Funcionario {
-    public Assistente(String nome, int idade,String cargo, double salario){
-        super(nome, idade, cargo, salario);
+    public Assistente(String nome, int idade,String cargo, double salario, String nivel){
+        super(nome, idade, cargo, salario, nivel);
 
     }
     
