@@ -25,10 +25,10 @@ public class CADASTROFUNCIONARIOS {
                 case 3:
                     System.out.println(BancoDeDados.folhaPagamento());
                     break;
-                }
-
             }
-        
+
         }
         
     }
+        
+}

@@ -8,7 +8,8 @@ public class Funcionario {
     private double salario;
     private double bonus;
     boolean promocao;
-    public String hierarquia;
+    private String nivel = "Júnior";
+  
     
     public Funcionario(String nome, int idade,String cargo, double salario){
         if (salario>=1500){
@@ -103,7 +104,6 @@ public class Funcionario {
     
     
     public double calcularSalario(){
-        this.setSalario(this.getSalario()+(this.getSalario()*this.getBonus()));
         return this.getSalario();
     }
     static void cadastroFuncionario(){
@@ -120,7 +120,11 @@ public class Funcionario {
             String nome = sc.next();
             System.out.println("Digite a idade do funcionário.");
             int idade = sc.nextInt();
-            System.out.println("Digite o cargo do funcionário.");
+            if (idade<18){
+                System.out.println("Funcionário menor de idade.");
+                throw new IllegalArgumentException();
+            }
+            System.out.println("Digite o cargo do funcionário().");
             String cargo = sc.next();
             System.out.println("Digite o salário do funcionário.");
             double salario = sc.nextDouble();

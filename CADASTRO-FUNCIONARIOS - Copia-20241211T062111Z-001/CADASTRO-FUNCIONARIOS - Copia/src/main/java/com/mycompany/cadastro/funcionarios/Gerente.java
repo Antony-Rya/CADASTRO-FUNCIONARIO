@@ -7,6 +7,7 @@ public class Gerente extends Funcionario {
         super(nome, idade, cargo, salario);
         
     }
+
     
     @Override
     public double calcularSalario(){
